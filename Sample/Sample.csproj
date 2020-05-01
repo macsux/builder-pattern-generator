@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>preview</LangVersion>
+
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="../BuilderGenerator/bin/Debug/netstandard2.0/BuilderGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuilderCommon\BuilderCommon.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>
