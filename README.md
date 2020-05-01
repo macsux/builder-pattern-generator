@@ -56,8 +56,8 @@ partial class Person
       return new Person
       {
         FirstName = _firstName,
-LastName = _lastName,
-BirthDate = _birthDate,
+        LastName = _lastName,
+        BirthDate = _birthDate,
 
       };
     }
@@ -72,7 +72,7 @@ BirthDate = _birthDate,
       }
       Dictionary<string,string> errors = new Dictionary<string, string>();
       if(_firstName == default)  AddError(errors, "FirstName", "Value is required");
-if(_lastName == default)  AddError(errors, "LastName", "Value is required");
+      if(_lastName == default)  AddError(errors, "LastName", "Value is required");
 
       if(errors.Count > 0)
         throw new BuilderCommon.BuilderException(errors);
