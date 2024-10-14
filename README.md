@@ -1,4 +1,6 @@
-This project demonstrates the use of .NET Source generators in order to automatically generate builder pattern for classes. Full details on this project are available in this [blog post](https://stakhov.pro/code-generation-with-net-5-builder-pattern/). Please note that this is a working POC sample rather then a production grade code.
+This project demonstrates the use of .NET Source generators in order to automatically generate builder pattern for classes. Full details on this project are available in this [blog post](https://stakhov.pro/code-generation-with-net-5-builder-pattern/). 
+
+The code has been updated in 2024 since that blog was written to support new syntax constructs in C#. This builder implementation creates an immutable pattern that minimizes memory heap allocations and minimizes excessive cloning.
 
 ### What does it do
 
