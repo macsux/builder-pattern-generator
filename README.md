@@ -34,6 +34,9 @@ dog = new Dog.DogBuilder()
 var anotherDog = dog.Builder
     .WithName("WallE")
     .Build(); // clone dog with new name
+
+var builder = new Dog.DogBuilder();
+builder.WithBreed("Husky").Build(); // throws because required property Name is not set
 ```
 
 By generating this:
