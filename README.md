@@ -4,7 +4,7 @@ The code has been updated in 2024 since that blog was written to support new syn
 
 ### What does it do
 
-Turns this
+For code like this:
 
 ```c#
 [GenerateBuilder]
@@ -15,7 +15,28 @@ public partial class Dog
 }
 ```
 
-into this (compile time)
+It allows you to be do this:
+```c#
+// start from initializer syntax
+var dog = new Dog
+{
+    Name = "Drake",
+    Breed = "Husky"
+};
+
+// start from builder
+dog = new Dog.DogBuilder()
+    .WithName("Drake")
+    .WithBreed("Husky")
+    .Build();
+    
+    
+var anotherDog = dog.Builder
+    .WithName("WallE")
+    .Build(); // clone dog with new name
+```
+
+By generating this:
 
 ```c#
 
