@@ -15,7 +15,7 @@ public partial class Dog
 }
 ```
 
-It allows you to be do this:
+It allows you to do this:
 ```c#
 // start from initializer syntax
 var dog = new Dog
@@ -105,7 +105,8 @@ partial class Dog
            clone:
            return new Dog
            {
-                Name = _name,Breed = _breed
+            Name = IsNameSet ? _name : _original.Name,
+            Breed = IsBreedSet ? _breed : _original.Breed
            };
        }
    }

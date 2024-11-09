@@ -4,18 +4,22 @@ using Newtonsoft.Json;
 using MyNamespace;
 var dog = new Dog
 {
-    Name = "Drake"
+    Name = "Drake",
+    Breed = "Husky"
 };
+
 Console.WriteLine(JsonConvert.SerializeObject(dog, Formatting.Indented));
 var sameDog = dog.Builder
     .WithName("Drake")
-    .Build();
+    .Build(); // object not cloned since value is the same
+
+Console.WriteLine($"dog is sameDog: {ReferenceEquals(dog,sameDog)}");
         
 var differentDog = dog.Builder
     .WithName("WallE")
     .Build();
-            
-Console.WriteLine($"dog is sameDog: {ReferenceEquals(dog,sameDog)}");
+
+Console.WriteLine(JsonConvert.SerializeObject(differentDog, Formatting.Indented));
 Console.WriteLine($"dog is differentDog: {ReferenceEquals(dog,differentDog)}");
 
 var builder = new Dog.DogBuilder();

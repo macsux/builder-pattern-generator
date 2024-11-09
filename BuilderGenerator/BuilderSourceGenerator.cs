@@ -131,9 +131,9 @@ namespace BuilderGenerator
                                      clone:
                                      return new {{@className}}
                                      {
-                                          {{properties.Render(p => /*language=csharp*/$$"""
-                                                {{p.Name}} = {{p.BackingFieldName}}
-                                                """, ",").Ident(3)}}
+                                      {{properties.Render(p => /*language=csharp*/$$"""
+                                            {{p.Name}} = Is{{p.Name}}Set ? {{p.BackingFieldName}} : _original.{{p.Name}}
+                                            """, ",\n").Ident(3)}}
                                      };
                                  }
                              }
